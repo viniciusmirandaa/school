@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='school_attr_action' model='ir.actions.act_window'>
+        <field name="name">School</field>
+        <field name="res_model">school</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="School" id="school_base_menu"/>
+
+    <menuitem name="School" id="school_menu" parent="school_base_menu"
+              action="school_attr_action"/>
+
+    <record id='school_view_form' model='ir.ui.view'>
+        <field name="name">School Form</field>
+        <field name="model">school</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="is_virtual_class"/>
+                        <field name="school_rank"/>
+                        <field name="result"/>
+                        <field name="school_image"/>
+                        <field name="school_description"/>
+                    </group>
+                    <group>
+                        <field name="address"/>
+                        <field name="estalish_date"/>
+                        <field name="open_date"/>
+                        <field name="currency_id"/>
+                        <field name="school_type"/>
+                        <field name="documents"/>
+                        <field name="document_name"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_view_tree" model="ir.ui.view">
+        <field name="name">School Tree</field>
+        <field name="model">school</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="is_virtual_class"/>
+                <field name="school_rank"/>
+                <field name="result"/>
+                <field name="school_image"/>
+                <field name="school_description"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
